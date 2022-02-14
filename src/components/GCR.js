@@ -1,6 +1,5 @@
 import React from 'react';
-import { Container, Grid, TextField, Button, Box, Link, Select, MenuItem, FormControl, FormLabel, Typography, Dialog, DialogActions, DialogContent, 
-    DialogContentText, DialogTitle, Table, TableBody, TableContainer, TableHead, TableRow, TableFooter, TablePagination } 
+import { Container, Divider, Grid, TextField, Button, Box, Link, Select, MenuItem, FormControl, FormLabel, Typography, Dialog, Table, TableBody, TableContainer, TableHead, TableRow, TableFooter, TablePagination, AppBar, Slide, Toolbar } 
     from '@material-ui/core';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DesktopDatePicker from '@mui/lab/DesktopDatePicker';
@@ -18,7 +17,17 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import LastPageIcon from '@mui/icons-material/LastPage';
 import { useTheme } from '@mui/material/styles';
+import CloseIcon from '@mui/icons-material/Close';
+import Stack from '@mui/material/Stack';
 import './global.scss'; 
+import { borderRadius } from '@mui/system';
+
+const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: '#fff',
+    boxShadow: 'none',
+    borderRadius: '0',
+    transition: 'none'
+}));
 
 
 const ExpandMore = styled((props) => {
@@ -161,6 +170,10 @@ const rows = [
     createData('Oreo', 437, 18.0),
   ].sort((a, b) => (a.calories < b.calories ? -1 : 1));
 
+  const Transition = React.forwardRef(function Transition(props, ref) {
+    return <Slide direction="up" ref={ref} {...props} />;
+  });
+
 
 const Home = () => {
     const [expanded, setExpanded] = React.useState(false);
@@ -205,26 +218,12 @@ const Home = () => {
     };
 
     const [open, setOpen] = React.useState(false);
-    const [scroll, setScroll] = React.useState('paper');
-
-    const handleClickOpen = (scrollType) => () => {
+    const handleClickOpen = () => {
         setOpen(true);
-        setScroll(scrollType);
     };
-
     const handleClose = () => {
         setOpen(false);
     };
-
-    const descriptionElementRef = React.useRef(null);
-    React.useEffect(() => {
-        if (open) {
-        const { current: descriptionElement } = descriptionElementRef;
-        if (descriptionElement !== null) {
-            descriptionElement.focus();
-        }
-        }
-    }, [open]);
 
     return (               
         <Container className="container-holder" maxWidth={false} disableGutters={true}>
@@ -406,9 +405,9 @@ const Home = () => {
                         </Collapse>
                     </div>
                     <div className="content-block lower"> 
-                        <Box display="flex" sx={{ justifyContent: 'space-between' }}>                     
-                            <Typography variant="h2">බල අපරාධ ලේඛණය</Typography> 
-                            <Button color="secondary" variant="contained" onClick={handleClickOpen('body')}>නව අපරාධ ඇතුලත් කිරීම</Button>
+                        <Box display="flex" sx={{ justifyContent: 'space-between', alignItems: 'center' }}>                     
+                            <Typography variant="h2" sx={{ paddingBottom: '0' }}>බල අපරාධ ලේඛණය</Typography> 
+                            <Button color="secondary" variant="contained" onClick={handleClickOpen}>නව අපරාධ ඇතුලත් කිරීම</Button>
                         </Box>
 
                         <TableContainer component={Paper} className="data-grid-holder">
@@ -468,33 +467,155 @@ const Home = () => {
                         </TableContainer>
 
                         <Dialog
+                            fullScreen
                             open={open}
                             onClose={handleClose}
-                            scroll={scroll}
-                            aria-labelledby="scroll-dialog-title"
-                            aria-describedby="scroll-dialog-description"
+                            TransitionComponent={Transition}
+                            className="entry-popup"
                         >
-                            <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
-                            <DialogContent dividers={scroll === 'paper'}>
-                            <DialogContentText
-                                id="scroll-dialog-description"
-                                ref={descriptionElementRef}
-                                tabIndex={-1}
-                            >
-                                {[...new Array(50)]
-                                .map(
-                                    () => `Cras mattis consectetur purus sit amet fermentum.
-                    Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                    Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-                    Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`,
-                                )
-                                .join('\n')}
-                            </DialogContentText>
-                            </DialogContent>
-                            <DialogActions>
-                            <Button onClick={handleClose}>Cancel</Button>
-                            <Button onClick={handleClose}>Subscribe</Button>
-                            </DialogActions>
+                            <AppBar sx={{ position: 'relative' }} className="toolbar-popup" position="sticky">
+                                <Toolbar>
+                                    <IconButton
+                                    edge="start"
+                                    color="inherit"
+                                    onClick={handleClose}
+                                    aria-label="close"
+                                    >
+                                    <CloseIcon />
+                                    </IconButton>
+                                    <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
+                                        බල අපරාධයක් පිලිබද පලමු තොරතුරු ඇතුළත් කිරීම 
+                                    </Typography>
+                                    <Button autoFocus variant="outlined" onClick={handleClose}>Save changes</Button>
+                                </Toolbar>
+                            </AppBar>
+                            <Stack spacing={4} direction="column" className="popup-container">
+                                <Item>
+                                    <Typography variant="h3">තොරතුරු පොතේ සටහන</Typography> 
+
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <FormLabel component="legend">අනුක්‍රමික අංකය</FormLabel>
+                                        <TextField id="outlined-basic" variant="outlined" />
+                                    </FormControl>   
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <ul>
+                                            <li className="w w-65">
+                                                <FormLabel component="legend">තොරතුරු පොතේ නම</FormLabel>
+                                                <TextField id="outlined-basic" variant="outlined" />
+                                            </li>
+                                            <li className="w w-35">
+                                                <FormLabel component="legend">පිටුව/ චේදය</FormLabel>
+                                                <TextField id="outlined-basic" variant="outlined" />
+                                            </li>
+                                        </ul>
+                                    </FormControl>    
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <ul>
+                                            <li>
+                                                <FormLabel component="legend">පොලිස් ස්ථානයට වාර්තා වූ දිනය</FormLabel>
+                                                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                                                    <DesktopDatePicker
+                                                        inputFormat="MM/dd/yyyy"
+                                                        value={value}
+                                                        onChange={handleChangeDate}
+                                                        renderInput={(params) => <TextField variant="outlined" {...params} />}
+                                                    />
+                                                </LocalizationProvider>
+                                            </li>
+                                            <li>
+                                                <FormLabel component="legend">පොලිස් ස්ථානයට වාර්තා වූ වේලාව</FormLabel>
+                                                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                                                    <TimePicker
+                                                        value={value}
+                                                        onChange={handleChangeDate}
+                                                        renderInput={(params) => <TextField variant="outlined" {...params} />}
+                                                    />
+                                                </LocalizationProvider>
+                                            </li>
+                                        </ul>
+                                    </FormControl>   
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <ul className="spec-label">
+                                            <li>
+                                                <FormLabel component="legend">පැමිණිල්ල සටහන් කිරීමට ගත වූ කාලය</FormLabel>
+                                                <TextField type="number" id="outlined-basic" variant="outlined" />
+                                                <label>මිනිත්තු</label>
+                                            </li>
+                                            <li>&nbsp;</li>
+                                        </ul>
+                                    </FormControl>
+                                </Item>
+                                <Divider />   
+                                <Item>
+                                    <Typography variant="h3">අපරාධය පිළිබද විස්තරය</Typography> 
+                                    
+
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <FormLabel component="legend">සිද්ධිය වූ ග්‍රාම නිලධාරී වසම</FormLabel>
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            value={age}
+                                            onChange={handleChange}
+                                        >
+                                            <MenuItem value={10}>වසම 1</MenuItem>
+                                            <MenuItem value={20}>වසම 2</MenuItem>
+                                            <MenuItem value={30}>වසම 3</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <FormLabel component="legend">සිද්ධිය වූ ස්ථානය</FormLabel>
+                                        <TextField id="outlined-basic" variant="outlined" />
+                                    </FormControl>
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <ul className="spec-label">
+                                            <li className="last-child">
+                                                <FormLabel component="legend">සිද්ධිය වූ ස්ථානයේ ග්‍රිඩ් අන්කය</FormLabel>
+                                                <TextField id="outlined-basic" variant="outlined" />
+                                                <label>My location</label>
+                                            </li>
+                                        </ul>
+                                    </FormControl>
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <ul>
+                                            <li>
+                                                <FormLabel component="legend">සිද්ධ්ය වූ දිනය</FormLabel>
+                                                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                                                    <DesktopDatePicker
+                                                        inputFormat="MM/dd/yyyy"
+                                                        value={value}
+                                                        onChange={handleChangeDate}
+                                                        renderInput={(params) => <TextField variant="outlined" {...params} />}
+                                                    />
+                                                </LocalizationProvider>
+                                            </li>
+                                            <li>
+                                                <FormLabel component="legend">සිද්ධ්ය වූ වේලාව</FormLabel>
+                                                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                                                    <TimePicker
+                                                        value={value}
+                                                        onChange={handleChangeDate}
+                                                        renderInput={(params) => <TextField variant="outlined" {...params} />}
+                                                    />
+                                                </LocalizationProvider>
+                                            </li>
+                                        </ul>
+                                        
+                                    </FormControl>
+                                </Item>
+                                <Divider />  
+                                <Item>
+                                    <Typography variant="h3">අනෙක් තොරතුරු</Typography> 
+                                </Item>
+                                <Divider />  
+                                <Item>
+                                    <Typography variant="h3">පැමිණිලිකරු පිළිබද විස්තර</Typography> 
+                                </Item>
+                                <Divider />  
+                                <Item>
+                                    <Typography variant="h3">ස්ථිර කිරීම</Typography> 
+                                </Item>
+                            </Stack>
                         </Dialog>
 
                     </div>

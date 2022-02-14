@@ -50,15 +50,16 @@ export const theme = createTheme({
       h2: {
         fontFamily: "'TT Norms Pro', sans-serif",
         fontWeight: 700,
-        fontSize: "1.4rem",
-        lineHeight: "1.4rem",
+        fontSize: "1.6rem",
+        lineHeight: "1.6rem",
         paddingBottom: "1rem",
       },
       h3: {
         fontFamily: "'TT Norms Pro', sans-serif",
         fontWeight: 700,
-        fontSize: "1rem",
+        fontSize: "1.4rem",
         lineHeight: "1.4rem",
+        paddingBottom: "1rem",  
       },
       h4: {
         fontFamily: "'TT Norms Pro', sans-serif",
@@ -136,6 +137,17 @@ export const theme = createTheme({
         root: {
           borderRadius: 0,
           fontSize: 16,
+        },
+        select: {
+          '&:focus': {
+            backgroundColor: "#FFFFFF",
+          }, 
+        }
+      },
+      MuiAvatar: {
+        root: {
+          width: '43px',
+          height: '43px'
         }
       },
       MuiCheckbox: {        
