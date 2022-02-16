@@ -64,8 +64,8 @@ export const theme = createTheme({
       h4: {
         fontFamily: "'TT Norms Pro', sans-serif",
         fontWeight: 700,
-        fontSize: "1.4rem",
-        lineHeight: "1.8rem",
+        fontSize: "1.1rem",
+        lineHeight: "1.5rem",
         paddingBottom: ".5rem",
       },
       subtitle1: {

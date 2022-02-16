@@ -19,8 +19,17 @@ import LastPageIcon from '@mui/icons-material/LastPage';
 import { useTheme } from '@mui/material/styles';
 import CloseIcon from '@mui/icons-material/Close';
 import Stack from '@mui/material/Stack';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import DeleteIcon from '@mui/icons-material/Delete';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+
+import TagsInput from './TagsInput';
 import './global.scss'; 
-import { borderRadius } from '@mui/system';
+
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: '#fff',
@@ -224,6 +233,22 @@ const Home = () => {
     const handleClose = () => {
         setOpen(false);
     };
+
+    
+    function handleSelecetedTags(items) {
+        console.log(items);
+    }
+
+    const [dense, setDense] = React.useState(false);
+  const [secondary, setSecondary] = React.useState(false);
+
+  function generate(element) {
+    return [0, 1, 2].map((value) =>
+      React.cloneElement(element, {
+        key: value,
+      }),
+    );
+  }
 
     return (               
         <Container className="container-holder" maxWidth={false} disableGutters={true}>
@@ -548,7 +573,6 @@ const Home = () => {
                                 <Divider />   
                                 <Item>
                                     <Typography variant="h3">අපරාධය පිළිබද විස්තරය</Typography> 
-                                    
 
                                     <FormControl variant="outlined" component="fieldset" className="inner-form-control">
                                         <FormLabel component="legend">සිද්ධිය වූ ග්‍රාම නිලධාරී වසම</FormLabel>
@@ -600,20 +624,253 @@ const Home = () => {
                                                 </LocalizationProvider>
                                             </li>
                                         </ul>
-                                        
+                                    </FormControl>
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <FormLabel component="legend">අපරාධයේ වර්ගය</FormLabel>
+                                        <Select
+                                            labelId="demo-simple-select-label"
+                                            id="demo-simple-select"
+                                            value={age}
+                                            onChange={handleChange}
+                                        >
+                                            <MenuItem value={10}>මනුෂ ඝාතනයට තැත් කිරීම / සිය පණ හාණිකර ගැනීමට අනුබල දීම</MenuItem>
+                                            <MenuItem value={20}>සිය පණ හාණිකර ගැනීමට අනුබල දීම</MenuItem>
+                                            <MenuItem value={30}>මනුෂ ඝාතනයට තැත් කිරීම</MenuItem>
+                                        </Select>
+                                    </FormControl>
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <FormLabel component="legend">අපරාධය පිළිබද කෙටි විස්තරය</FormLabel>
+                                        <TextField id="outlined-basic" variant="outlined" />
+                                    </FormControl>
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <FormLabel component="legend">නීතියේ වගන්ති</FormLabel>
+                                        <TagsInput
+                                            selectedTags={handleSelecetedTags}  
+                                            variant="outlined"
+                                            id="tags"
+                                            name="tags"
+                                            placeholder="Select or add tags"
+                                        />
                                     </FormControl>
                                 </Item>
                                 <Divider />  
                                 <Item>
-                                    <Typography variant="h3">අනෙක් තොරතුරු</Typography> 
-                                </Item>
-                                <Divider />  
-                                <Item>
                                     <Typography variant="h3">පැමිණිලිකරු පිළිබද විස්තර</Typography> 
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <FormLabel component="legend">නීතියේ වගන්ති</FormLabel>
+                                        <TagsInput
+                                            selectedTags={handleSelecetedTags}  
+                                            variant="outlined"
+                                            id="tags"
+                                            name="tags"
+                                            placeholder="Select or add tags"
+                                        />
+                                    </FormControl>
+
+                                    <Typography variant="h4">දේපල සම්බන්ද තොරතුරු</Typography> 
+                                    <div className="bg-on">
+                                        <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                            <ul>
+                                                <li className="w w-50">
+                                                    <FormLabel component="legend">දේපල</FormLabel>
+                                                    <Select
+                                                        labelId="demo-simple-select-label"
+                                                        id="demo-simple-select"
+                                                        value={age}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <MenuItem value={10}>රත්‍රන් මාල</MenuItem>
+                                                        <MenuItem value={20}>පරිගණක</MenuItem>
+                                                        <MenuItem value={30}>ජංගම දුරකථන</MenuItem>
+                                                    </Select>
+                                                </li>
+                                                <li className="w w-25">
+                                                    <FormLabel component="legend">වටිනාකම</FormLabel>
+                                                    <TextField id="outlined-basic" variant="outlined" />
+                                                </li>
+                                                <li className="w w-25">
+                                                    <FormLabel component="legend">&nbsp;</FormLabel>
+                                                    <Link href="#" underline="none" style={{ display: 'flex', alignItems: 'center' }}>
+                                                        <AddCircleOutlineIcon /> Add item
+                                                    </Link>
+                                                </li>
+                                            </ul>
+                                        </FormControl>
+                                    </div>
+                                    <div className="inner-form-control cal-table">
+                                        <div>
+                                            <ul>
+                                                <li className="w w-50">
+                                                    sd asd a da da sd
+                                                </li>
+                                                <li className="w w-25">
+                                                    43535345345345
+                                                </li>
+                                                <li className="w w-25">
+                                                    <Link href="#" variant="body2"><DeleteIcon /></Link>                                                    
+                                                </li>
+                                            </ul>
+                                            <ul>
+                                                <li className="w w-50">
+                                                    sd asd a da da sd
+                                                </li>
+                                                <li className="w w-25">
+                                                    43535345345345
+                                                </li>
+                                                <li className="w w-25">
+                                                    <Link href="#" variant="body2"><DeleteIcon /></Link>                                                    
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <Divider />
+                                        <div className="footer"> 
+                                            <ul>
+                                                <li className="w w-50">
+                                                    මුළු වටිනාකම
+                                                </li>
+                                                <li className="w w-25">
+                                                    1,250,000.00
+                                                </li>
+                                                <li className="w w-25">
+                                                    &nbsp;
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div> 
+                                    
+                                    <br />
+
+                                    <Typography variant="h4">සොයාගත් දේපල සම්බන්ද තොරතුරු</Typography> 
+                                    <div className="bg-on">
+                                        <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                            <ul>
+                                                <li className="w w-50">
+                                                    <FormLabel component="legend">දේපල</FormLabel>
+                                                    <Select
+                                                        labelId="demo-simple-select-label"
+                                                        id="demo-simple-select"
+                                                        value={age}
+                                                        onChange={handleChange}
+                                                    >
+                                                        <MenuItem value={10}>රත්‍රන් මාල</MenuItem>
+                                                        <MenuItem value={20}>පරිගණක</MenuItem>
+                                                        <MenuItem value={30}>ජංගම දුරකථන</MenuItem>
+                                                    </Select>
+                                                </li>
+                                                <li className="w w-25">
+                                                    <FormLabel component="legend">වටිනාකම</FormLabel>
+                                                    <TextField id="outlined-basic" variant="outlined" />
+                                                </li>
+                                                <li className="w w-25">
+                                                    <FormLabel component="legend">&nbsp;</FormLabel>
+                                                    <Link href="#" underline="none" style={{ display: 'flex', alignItems: 'center' }}>
+                                                        <AddCircleOutlineIcon /> Add item
+                                                    </Link>
+                                                </li>
+                                            </ul>
+                                        </FormControl>
+                                    </div>
+                                    <div className="inner-form-control cal-table">
+                                        <div>
+                                            <ul>
+                                                <li className="w w-50">
+                                                    sd asd a da da sd
+                                                </li>
+                                                <li className="w w-25">
+                                                    43535345345345
+                                                </li>
+                                                <li className="w w-25">
+                                                    <Link href="#" variant="body2"><DeleteIcon /></Link>                                                    
+                                                </li>
+                                            </ul>
+                                            <ul>
+                                                <li className="w w-50">
+                                                    sd asd a da da sd
+                                                </li>
+                                                <li className="w w-25">
+                                                    43535345345345
+                                                </li>
+                                                <li className="w w-25">
+                                                    <Link href="#" variant="body2"><DeleteIcon /></Link>                                                    
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <Divider />
+                                        <div className="footer"> 
+                                            <ul>
+                                                <li className="w w-50">
+                                                    මුළු වටිනාකම
+                                                </li>
+                                                <li className="w w-25">
+                                                    1,250,000.00
+                                                </li>
+                                                <li className="w w-25">
+                                                    &nbsp;
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div> 
                                 </Item>
                                 <Divider />  
                                 <Item>
                                     <Typography variant="h3">ස්ථිර කිරීම</Typography> 
+
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <ul>
+                                            <li>
+                                                <FormLabel component="legend">ජාතික හැඳුනුම්පත් අංකය</FormLabel>
+                                                <TextField id="outlined-basic" variant="outlined" />
+                                            </li>
+                                            <li>
+                                                <FormLabel component="legend">විදේශ ගමන් බලපත්‍ර අංකය</FormLabel>
+                                                <TextField id="outlined-basic" variant="outlined" />
+                                            </li>
+                                        </ul>
+                                    </FormControl>  
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <FormLabel component="legend">පැමිණිලිකරුගේ නම</FormLabel>
+                                        <TextField id="outlined-basic" variant="outlined" />
+                                    </FormControl>
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <FormLabel component="legend">ලිපිනය</FormLabel>
+                                        <TextField id="outlined-basic" variant="outlined" />
+                                    </FormControl>
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <ul>
+                                            <li>
+                                                <FormLabel component="legend">වයස</FormLabel>
+                                                <TextField id="outlined-basic" variant="outlined" />
+                                            </li>
+                                            <li>
+                                                <FormLabel component="legend">ස්ත්‍රී/පුරුෂ භාවය</FormLabel>
+                                                <Select
+                                                    labelId="demo-simple-select-label"
+                                                    id="demo-simple-select"
+                                                    value={age}
+                                                    onChange={handleChange}
+                                                >
+                                                    <MenuItem value={10}>පුරුෂ</MenuItem>
+                                                    <MenuItem value={20}>ස්ත්‍රී</MenuItem>
+                                                </Select>
+                                            </li>
+                                        </ul>
+                                    </FormControl>  
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <ul>
+                                            <li>
+                                                <FormLabel component="legend">දුරකථන අංකය 1</FormLabel>
+                                                <TextField id="outlined-basic" variant="outlined" />
+                                            </li>
+                                            <li>
+                                                <FormLabel component="legend">දුරකථන අංකය 2</FormLabel>
+                                                <TextField id="outlined-basic" variant="outlined" />
+                                            </li>
+                                        </ul>
+                                    </FormControl>  
+                                    <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                        <FormLabel component="legend">පැමිණිලිකරු වින්දිතයා නොවන්නේ නම් පැමිණිලිකරුට වින්දිතයාට ඇති සම්බන්ධතාවය</FormLabel>
+                                        <TextField id="outlined-basic" variant="outlined" />
+                                    </FormControl>
                                 </Item>
                             </Stack>
                         </Dialog>

@@ -197,22 +197,24 @@ header {
                 width: 50%;
             }
             .MuiFormControl-root,
-            .MuiOutlinedInput-root {
+            .MuiOutlinedInput-root,
+            .input-tag {
                 width: 100%;
             }
             &:last-child {
                 margin-bottom: 0;
+            }
+            .MuiOutlinedInput-adornedStart {
+                padding-left: 0 !important;
             }
             ul {
                 display: flex;
                 width: 100%;
                 li {
                     flex: 1 0;
+                    padding-right: 1rem;
                     &:last-child {
-                        padding-left: 1rem;
-                    }
-                    &.last-child {
-                        padding-left: 0;
+                        padding-right: 0;
                     }
                     &.w {
                         flex: auto;
@@ -222,8 +224,14 @@ header {
                         &.w-50 {
                             width: 50%;
                         }
+                        &.w-40 {
+                            width: 40%;
+                        }
                         &.w-35 {
                             width: 35%;
+                        }
+                        &.w-25 {
+                            width: 25%;
                         }
                     }
                 }
@@ -233,7 +241,7 @@ header {
                     }
                     label {
                         position: absolute;
-                        right: .12rem;
+                        right: 1.1rem;
                         background-color: #EEEEEE;
                         padding: .5rem 1.5rem;
                         margin-top: .12rem;
@@ -241,8 +249,33 @@ header {
                     }
                 }
             }
+            .MuiChip-root {
+                margin-left: .8rem;
+                margin-right: 0;
+            }
+            .css-okt5j6-MuiDataGrid-columnHeaders {
+                display: none !important;
+            }
+            &.cal-table {
+                display: block;
+                .footer {
+                    font-weight: bold;
+                }
+            }
         }
     }
 }
 
 
+.bg-on {
+    background-color: #EEEEEE;
+    padding: .8rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    @media #{$breakpoint-lg} {
+        width: 50%;
+    }
+    .inner-form-control {
+        width: 100% !important; 
+    }
+}
