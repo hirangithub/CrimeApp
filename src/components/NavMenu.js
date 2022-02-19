@@ -32,6 +32,7 @@ export class NavMenu extends Component {
                   <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
+                      className="white-version"
                   >
                       <MenuItem value={10}>අම්පාර</MenuItem>
                       <MenuItem value={20}>බසවක්කුලම</MenuItem>

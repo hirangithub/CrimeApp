@@ -13,17 +13,17 @@ export const theme = createTheme({
     },
     palette: {
       primary: {
-        main: '#0FA1F4',
+        main: '#3f51b5',
       },
       secondary: {
         main: '#141414',
       },
       text: {
-        primary: 'rgba(20, 20, 20, 1)',
+        primary: 'rgba(0, 0, 0, 1)',
         disabled: 'rgba(0, 0, 0, 0.38)',
       },
       background: {
-        default: "#F0F2F5"
+        default: "#EEEEEE"
       }
     },    
     typography: {
@@ -95,10 +95,10 @@ export const theme = createTheme({
         },
         containedSecondary: {
           fontWeight: 700,
-          backgroundColor: '#0FA1F4',
+          backgroundColor: '#3f51b5',
           color: '#FFFFFF',
           '&:hover': {
-              backgroundColor: '#0582C9',
+              backgroundColor: '#475bcc',
           },
         },
       },
@@ -108,13 +108,13 @@ export const theme = createTheme({
           padding: '0',
           fontSize: 16,
           "& $notchedOutline": {
-            borderColor: "#E4E6EF"
+            borderColor: "rgba(0, 0, 0, 0.23)"
           },
           "&:hover $notchedOutline": {
-            borderColor: "#B9BAC3"
+            borderColor: "#3f51b5"
           },
           "&$focused $notchedOutline": {
-            borderColor: "#B9BAC3"
+            borderColor: "#3f51b5"
           },
           "&&& $input": {
             padding: "12.2px 14px"
@@ -122,6 +122,7 @@ export const theme = createTheme({
         }
       },
       MuiInputLabel: {
+        color: 'red',
         outlined: {
              transform: 'translate(14px, 13px)',
         },
@@ -130,18 +131,14 @@ export const theme = createTheme({
         root: {
           fontSize: 15,
           lineHeight: 1.3,
-          paddingBottom: '.5rem'
+          paddingBottom: '.5rem',
+          color: '#141414',
         }
       },
       MuiSelect: {
         root: {
           borderRadius: 0,
           fontSize: 16,
-        },
-        select: {
-          '&:focus': {
-            backgroundColor: "#FFFFFF",
-          }, 
         }
       },
       MuiAvatar: {
@@ -153,13 +150,13 @@ export const theme = createTheme({
       MuiCheckbox: {        
         colorSecondary: {   
           '&$checked': {
-            color: '#0FA1F4',
+            color: '#3f51b5',
           },        
         },
       },
       MuiToolbar: {
         root: {
-          backgroundColor: '#FFFFFF',
+          backgroundColor: '#3f51b5',
         }
       },
       MuiBreadcrumbs: {

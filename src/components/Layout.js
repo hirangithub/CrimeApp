@@ -17,7 +17,7 @@ export class Layout extends Component {
             <Divider />
             <Breadcrumbs aria-label="breadcrumb" className="breadcrumb">
               <Link underline="hover" color="inherit" href="/">
-                <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" />
+                <HomeIcon sx={{ mr: 0.5 }} fontSize="inherit" color="primary" />
                 Home
               </Link>
               <Typography variant="subtitle2">බල අපරාධ</Typography>

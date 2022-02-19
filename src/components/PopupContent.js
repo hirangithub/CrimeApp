@@ -87,9 +87,8 @@ const PopupContent = () => {
                 <FormControl variant="outlined" component="fieldset" className="inner-form-control">
                     <ul className="spec-label">
                         <li>
-                            <FormLabel component="legend">පැමිණිල්ල සටහන් කිරීමට ගත වූ කාලය</FormLabel>
+                            <FormLabel component="legend">පැමිණිල්ල සටහන් කිරීමට ගත වූ කාලය (මිනිත්තු)</FormLabel>
                             <TextField type="number" id="outlined-basic" variant="outlined" />
-                            <label>මිනිත්තු</label>
                         </li>
                         <li>&nbsp;</li>
                     </ul>
@@ -122,9 +121,8 @@ const PopupContent = () => {
                 <FormControl variant="outlined" component="fieldset" className="inner-form-control">
                     <ul className="spec-label">
                         <li className="last-child">
-                            <FormLabel component="legend">සිද්ධිය වූ ස්ථානයේ ග්‍රිඩ් අන්කය</FormLabel>
+                            <FormLabel component="legend">සිද්ධිය වූ ස්ථානයේ ග්‍රිඩ් අන්කය (My location)</FormLabel>
                             <TextField id="outlined-basic" variant="outlined" />
-                            <label>My location</label>
                         </li>
                     </ul>
                 </FormControl>
@@ -222,7 +220,7 @@ const PopupContent = () => {
                             <li className="w w-25">
                                 <FormLabel component="legend">&nbsp;</FormLabel>
                                 <Link href="#" underline="none" style={{ display: 'flex', alignItems: 'center' }}>
-                                    <AddCircleOutlineIcon /> Add item
+                                    <AddCircleOutlineIcon style={{ marginRight: '.3rem' }} /> Add item
                                 </Link>
                             </li>
                         </ul>
@@ -295,7 +293,7 @@ const PopupContent = () => {
                             <li className="w w-25">
                                 <FormLabel component="legend">&nbsp;</FormLabel>
                                 <Link href="#" underline="none" style={{ display: 'flex', alignItems: 'center' }}>
-                                    <AddCircleOutlineIcon /> Add item
+                                    <AddCircleOutlineIcon style={{ marginRight: '.3rem' }} /> Add item
                                 </Link>
                             </li>
                         </ul>
