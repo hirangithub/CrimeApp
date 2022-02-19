@@ -119,25 +119,44 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     },
 }));
 
-function createData(name, calories, fat) {
-    return { name, calories, fat };
+function createData(crimeNumber, crimeType, gsDivision, placeOfIncident, 
+  dateTimeOfIncident, reportedDateTime, 
+  infomationBookName, pageAndPara, valueOfProperty) {
+  return { 
+    crimeNumber, 
+    crimeType, 
+    gsDivision, 
+    placeOfIncident, 
+    dateTimeOfIncident, 
+    reportedDateTime, 
+    infomationBookName, 
+    pageAndPara, 
+    valueOfProperty };
 }
 
 const rows = [
-    createData('Cupcake', 305, 3.7),
-    createData('Donut', 452, 25.0),
-    createData('Eclair', 262, 16.0),
-    createData('Frozen yoghurt', 159, 6.0),
-    createData('Gingerbread', 356, 16.0),
-    createData('Honeycomb', 408, 3.2),
-    createData('Ice cream sandwich', 237, 9.0),
-    createData('Jelly Bean', 375, 0.0),
-    createData('KitKat', 518, 26.0),
-    createData('Lollipop', 392, 0.2),
-    createData('Marshmallow', 318, 0),
-    createData('Nougat', 360, 19.0),
-    createData('Oreo', 437, 18.0),
-  ].sort((a, b) => (a.calories < b.calories ? -1 : 1));
+    createData('34/2021', 'GC-001 මනුෂ ඝාතනයට තැත් කිරීම / සිය පණ හාණිකර ගැනීමට අනුබල දීම',
+    'මිරිහාන දකුණ', '156/32 අසිරි උයන, පුර්වාරාම විහාර මාවත , හෝමාගම', 
+    '2021-12-23 21:20','2021-12-24 10:00', 'GCIB', '201/50', 15334534.00),
+    createData('24/2021', 'GC-002 වංචා / සාපරාධී සාවද්‍ය පරිහරණය, විශ්වාසය කඩ කිරීම. රු 100,000/- විශේෂ අපරාධ විමර්ශන අංශයට වාර්තා වූ',
+    'මිරිහාන දකුණ', '156/32 අසිරි උයන, සහන මාවත,රාජගිරිය ', 
+    '2021-12-23 21:20','2021-12-24 10:00', 'GCIB', '200/20', 22344.00),
+    createData('14/2021', 'GC-001 මනුෂ ඝාතනයට තැත් කිරීම / සිය පණ හාණිකර ගැනීමට අනුබල දීම',
+    'මිරිහාන දකුණ', '156/32 අසිරි උයන, පුර්වාරාම විහාර මාවත , හෝමාගම', 
+    '2021-12-23 21:20','2021-12-24 10:00', 'GCIB', '200/50', 0.00),
+    createData('12/2021', 'GC-003 බලෙන් ලබා ගැනීම් ( මුදලක් යම් දේපලක් හෝ වටිනා ඇපයකට හැරවිය හැකි අත්සන් තැබූ යමක්)',
+    'මිරිහාන දකුණ', '156/32 අසිරි උයන, පුර්වාරාම විහාර මාවත , හෝමාගම', 
+    '2021-12-23 21:20','2021-12-24 10:00', 'GCIB', '200/50', 15334534),
+    createData('10/2021', 'GC-001 මනුෂ ඝාතනයට තැත් කිරීම / සිය පණ හාණිකර ගැනීමට අනුබල දීම',
+    'මිරිහාන දකුණ', '156/32 අසිරි උයන, පුර්වාරාම විහාර මාවත , හෝමාගම', 
+    '2021-12-23 21:20','2021-12-24 10:00', 'GCIB', '200/50', 15334534),
+    createData('09/2021', 'GC-001 මනුෂ ඝාතනයට තැත් කිරීම / සිය පණ හාණිකර ගැනීමට අනුබල දීම',
+    'මිරිහාන දකුණ', '156/32 අසිරි උයන, පුර්වාරාම විහාර මාවත , හෝමාගම', 
+    '2021-12-23 21:20','2021-12-24 10:00', 'GCIB', '200/50', 15334534),
+    createData('34/2021', 'GC-001 මනුෂ ඝාතනයට තැත් කිරීම / සිය පණ හාණිකර ගැනීමට අනුබල දීම',
+    'මිරිහාන දකුණ', '156/32 අසිරි උයන, පුර්වාරාම විහාර මාවත , හෝමාගම', 
+    '2021-12-23 21:20','2021-12-24 10:00', 'GCIB', '200/50', 15334534),    
+  ].sort((a, b) => (a.dateTimeOfIncident < b.dateTimeOfIncident ? -1 : 1));
 
   const Transition = React.forwardRef(function Transition(props, ref) {
     return <Slide direction="up" ref={ref} {...props} />;
@@ -216,10 +235,16 @@ const Home = () => {
                         <TableContainer component={Paper} className="data-grid-holder">
                             <Table sx={{ minWidth: 700 }} aria-label="customized pagination table">
                                 <TableHead>
-                                <TableRow>
-                                    <StyledTableCell>Dessert (100g serving)</StyledTableCell>
-                                    <StyledTableCell align="right">Calories</StyledTableCell>
-                                    <StyledTableCell align="right">Fat&nbsp;(g)</StyledTableCell>
+                                <TableRow style={{ verticalAlign: 'top' }}>
+                                  <StyledTableCell>අපරාධ අංකය</StyledTableCell> 
+                                  <StyledTableCell>අපරාධයේ වර්ගය</StyledTableCell>
+                                  <StyledTableCell>ග්‍රාම නිලධාරී වසම</StyledTableCell>
+                                  <StyledTableCell>සිද්ධිය වූ ස්ථානය</StyledTableCell>
+                                  <StyledTableCell>සිද්ධිය වූ දිනය වේලාව</StyledTableCell>
+                                  <StyledTableCell>වාර්ථා වූ දිනය වේලාව</StyledTableCell>
+                                  <StyledTableCell>තොරතුරු පොතේ නම</StyledTableCell>
+                                  <StyledTableCell>පිටුව/ ඡේදය</StyledTableCell>
+                                  <StyledTableCell  align="right">දේපලවල වටිනාකම</StyledTableCell>
                                 </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -227,15 +252,33 @@ const Home = () => {
                                             ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                                             : rows
                                         ).map((row) => (
-                                            <StyledTableRow key={row.name}>
-                                                <TableCell component="th" scope="row">
-                                                    {row.name}
+                                            <StyledTableRow key={row.name} style={{ verticalAlign: 'top' }}>
+                                                <TableCell style={{ width: 80 }} component="th" scope="row" >
+                                                    {row.crimeNumber}
+                                                </TableCell>
+                                                <TableCell style={{ minWidth: 150 }} >
+                                                    {row.crimeType}
+                                                </TableCell>
+                                                <TableCell style={{ width: 170 }} >
+                                                    {row.gsDivision}
+                                                </TableCell>
+                                                <TableCell style={{ minWidth: 150 }} >
+                                                    {row.placeOfIncident}
+                                                </TableCell>
+                                                <TableCell style={{ width: 160 }} >
+                                                    {row.dateTimeOfIncident}
+                                                </TableCell>
+                                                <TableCell style={{ width: 160 }} >
+                                                    {row.reportedDateTime}
+                                                </TableCell>
+                                                <TableCell style={{ width: 160 }} >
+                                                    {row.infomationBookName}
+                                                </TableCell>
+                                                <TableCell style={{ width: 100 }} >
+                                                    {row.pageAndPara}
                                                 </TableCell>
                                                 <TableCell style={{ width: 160 }} align="right">
-                                                    {row.calories}
-                                                </TableCell>
-                                                <TableCell style={{ width: 160 }} align="right">
-                                                    {row.fat}
+                                                    {row.valueOfProperty}
                                                 </TableCell>
                                             </StyledTableRow>
                                     ))}
@@ -250,7 +293,7 @@ const Home = () => {
                                     <TableRow>
                                         <TablePagination
                                             rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
-                                            colSpan={3}
+                                            colSpan={9}
                                             count={rows.length}
                                             rowsPerPage={rowsPerPage}
                                             page={page}
