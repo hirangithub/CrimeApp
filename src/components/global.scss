@@ -117,7 +117,7 @@ header {
     }
 
     .search-form {   
-        grid-template-columns: 350px 150px 1fr;
+        grid-template-columns: 350px minmax(150px, 170px) 1fr;
         grid-gap: 1rem; 
     }
 

@@ -219,7 +219,7 @@ const PopupContent = () => {
                             </li>
                             <li className="w w-25">
                                 <FormLabel component="legend">&nbsp;</FormLabel>
-                                <Link href="#" underline="none" style={{ display: 'flex', alignItems: 'center' }}>
+                                <Link href="#" underline="none" style={{ display: 'flex', alignItems: 'center', marginTop: '.5rem' }}>
                                     <AddCircleOutlineIcon style={{ marginRight: '.3rem' }} /> Add item
                                 </Link>
                             </li>
@@ -292,7 +292,7 @@ const PopupContent = () => {
                             </li>
                             <li className="w w-25">
                                 <FormLabel component="legend">&nbsp;</FormLabel>
-                                <Link href="#" underline="none" style={{ display: 'flex', alignItems: 'center' }}>
+                                <Link href="#" underline="none" style={{ display: 'flex', alignItems: 'center', marginTop: '.5rem' }}>
                                     <AddCircleOutlineIcon style={{ marginRight: '.3rem' }} /> Add item
                                 </Link>
                             </li>
