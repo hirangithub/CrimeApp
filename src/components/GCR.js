@@ -244,7 +244,7 @@ const Home = () => {
                                     <StyledTableCell>වාර්ථා වූ දිනය වේලාව</StyledTableCell>
                                     <StyledTableCell>තොරතුරු පොතේ නම</StyledTableCell>
                                     <StyledTableCell>පිටුව/ ඡේදය</StyledTableCell>
-                                    <StyledTableCell>දේපලවල වටිනාකම</StyledTableCell>
+                                    <StyledTableCell>දේපලවල වටිනාකම (Rs.)</StyledTableCell>
                                   </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -254,7 +254,7 @@ const Home = () => {
                                         ).map((row) => (
                                             <StyledTableRow key={row.name} style={{ verticalAlign: 'top' }}>
                                                 <TableCell style={{ width: 80 }} component="th" scope="row" >
-                                                    {row.crimeNumber}
+                                                    <a href="#">{row.crimeNumber}</a>
                                                 </TableCell>
                                                 <TableCell style={{ minWidth: 210 }} >
                                                     {row.crimeType}
