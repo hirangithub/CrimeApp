@@ -191,6 +191,30 @@ header {
 
     .data-grid-holder {
         margin-top: 1rem;
+        box-shadow: none;
+        border: 1px solid rgba(224, 224, 224, 1);
+        td {
+            padding: 12px;
+        }
+        .MuiTableHead-root {
+            tr td {
+                font-weight: bold;
+            }
+        }
+        .MuiTableBody-root {
+            tr {
+                &:hover {
+                    background-color: rgba(63,81,181,0.15);
+                    cursor: pointer;
+                }
+            }
+        }
+        .MuiTableFooter-root {
+            tr td {
+                border-bottom: 0;
+                padding: 0;
+            }
+        }
     }
 }
 
@@ -204,11 +228,12 @@ header {
 
 .MuiTablePagination-toolbar {
     background-color: #EEEEEE !important;
-    border-top: 1px solid #CCCCCC;
-    font-size: 0.9rem;
+    border-top: 2px solid rgba(224, 224, 224, 1);
+    font-size: 0.8rem;
     p,
-    a {
-        font-size: 0.9rem;
+    a,
+    select {
+        font-size: 0.8rem;
     }
 }
 

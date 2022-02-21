@@ -28,11 +28,11 @@ export class NavMenu extends Component {
           <ul>
             <li>
               <FormControl variant="outlined" className="location-dropdown">
-                  <InputLabel id="demo-simple-select-label">පොලිස් ආයතනය</InputLabel>
                   <Select
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
                       className="white-version"
+                      defaultValue="20"
                   >
                       <MenuItem value={10}>අම්පාර</MenuItem>
                       <MenuItem value={20}>බසවක්කුලම</MenuItem>

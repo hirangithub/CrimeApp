@@ -235,17 +235,17 @@ const Home = () => {
                         <TableContainer component={Paper} className="data-grid-holder">
                             <Table sx={{ minWidth: 700 }} aria-label="customized pagination table">
                                 <TableHead>
-                                <TableRow style={{ verticalAlign: 'top' }}>
-                                  <StyledTableCell>අපරාධ අංකය</StyledTableCell> 
-                                  <StyledTableCell>අපරාධයේ වර්ගය</StyledTableCell>
-                                  <StyledTableCell>ග්‍රාම නිලධාරී වසම</StyledTableCell>
-                                  <StyledTableCell>සිද්ධිය වූ ස්ථානය</StyledTableCell>
-                                  <StyledTableCell>සිද්ධිය වූ දිනය වේලාව</StyledTableCell>
-                                  <StyledTableCell>වාර්ථා වූ දිනය වේලාව</StyledTableCell>
-                                  <StyledTableCell>තොරතුරු පොතේ නම</StyledTableCell>
-                                  <StyledTableCell>පිටුව/ ඡේදය</StyledTableCell>
-                                  <StyledTableCell  align="right">දේපලවල වටිනාකම</StyledTableCell>
-                                </TableRow>
+                                  <TableRow style={{ verticalAlign: 'top' }}>
+                                    <StyledTableCell>අපරාධ අංකය</StyledTableCell> 
+                                    <StyledTableCell>අපරාධයේ වර්ගය</StyledTableCell>
+                                    <StyledTableCell>ග්‍රාම නිලධාරී වසම</StyledTableCell>
+                                    <StyledTableCell>සිද්ධිය වූ ස්ථානය</StyledTableCell>
+                                    <StyledTableCell>සිද්ධිය වූ දිනය වේලාව</StyledTableCell>
+                                    <StyledTableCell>වාර්ථා වූ දිනය වේලාව</StyledTableCell>
+                                    <StyledTableCell>තොරතුරු පොතේ නම</StyledTableCell>
+                                    <StyledTableCell>පිටුව/ ඡේදය</StyledTableCell>
+                                    <StyledTableCell>දේපලවල වටිනාකම</StyledTableCell>
+                                  </TableRow>
                                 </TableHead>
                                 <TableBody>
                                         {(rowsPerPage > 0
@@ -256,10 +256,10 @@ const Home = () => {
                                                 <TableCell style={{ width: 80 }} component="th" scope="row" >
                                                     {row.crimeNumber}
                                                 </TableCell>
-                                                <TableCell style={{ minWidth: 150 }} >
+                                                <TableCell style={{ minWidth: 210 }} >
                                                     {row.crimeType}
                                                 </TableCell>
-                                                <TableCell style={{ width: 170 }} >
+                                                <TableCell style={{ width: 150 }} >
                                                     {row.gsDivision}
                                                 </TableCell>
                                                 <TableCell style={{ minWidth: 150 }} >
@@ -271,13 +271,13 @@ const Home = () => {
                                                 <TableCell style={{ width: 160 }} >
                                                     {row.reportedDateTime}
                                                 </TableCell>
-                                                <TableCell style={{ width: 160 }} >
+                                                <TableCell style={{ width: 120 }} >
                                                     {row.infomationBookName}
                                                 </TableCell>
                                                 <TableCell style={{ width: 100 }} >
                                                     {row.pageAndPara}
                                                 </TableCell>
-                                                <TableCell style={{ width: 160 }} align="right">
+                                                <TableCell style={{ width: 160 }}>
                                                     {row.valueOfProperty}
                                                 </TableCell>
                                             </StyledTableRow>
