@@ -1,28 +1,36 @@
 import React, { Component } from 'react';
 import { NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import { Box, Select, MenuItem, FormControl, InputLabel, Avatar } from '@material-ui/core';
+import { Box, Select, MenuItem, FormControl, Avatar } from '@material-ui/core';
 import ProfileImage from '../assets/1.png';
+import { useLocation } from "react-router-dom";
 
-export class NavMenu extends Component {
-  static displayName = NavMenu.name;
+const NavMenu = () => {
 
-  render () {
+    //assigning location variable
+    const location = useLocation();
+
+    //destructuring pathname from location
+    const { pathname } = location;
+
+    //Javascript split method to get the name of the path in array
+    const splitLocation = pathname.split("/");
+
     return (
 
       <Box display="flex" sx={{ width: '100%', justifyContent: 'space-between', alignItems: 'center' }}>                     
             <ul>
               <NavItem>
-                  <NavLink tag={Link} className="selected" to="/">බල අපරාධ (GCR)</NavLink>
+                  <NavLink tag={Link} to="/" className={splitLocation[1] === "" ||  splitLocation[1] === "GCRDetail" ? "selected" : ""}>බල අපරාධ (GCR)</NavLink>
               </NavItem>
               <NavItem>
-                  <NavLink tag={Link} to="/MOR">සුළු අපරාධ (MOR)</NavLink>
+                  <NavLink tag={Link} to="/MOR" className={splitLocation[1] === "MOR" ? "selected" : ""}>සුළු අපරාධ (MOR)</NavLink>
               </NavItem>
               <NavItem>
-                  <NavLink tag={Link} to="/MOR">සුළු පැමණලි (MCR)</NavLink>
+                  <NavLink tag={Link} to="/MCR" className={splitLocation[1] === "MCR" ? "selected" : ""}>සුළු පැමණලි (MCR)</NavLink>
               </NavItem>
               <NavItem>
-                  <NavLink tag={Link} to="/MOR">දුෂණ වැටලීම් (VICE)</NavLink>
+                  <NavLink tag={Link} to="/VICE" className={splitLocation[1] === "VICE" ? "selected" : ""}>දුෂණ වැටලීම් (VICE)</NavLink>
               </NavItem>
           </ul>
           <ul>
@@ -55,5 +63,6 @@ export class NavMenu extends Component {
       </Box>
 
     );
-  }
 }
+
+export default NavMenu;

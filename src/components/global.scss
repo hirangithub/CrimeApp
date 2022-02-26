@@ -12,10 +12,20 @@ a {
     }
 }
 
+hr {
+    box-shadow: none;
+    opacity: .5;
+    margin-bottom: 2rem;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+.p-0 {
+    padding-bottom: 0 !important;
 }
 
 .MuiFormLabel-root {
@@ -257,6 +267,17 @@ header {
 .css-2ujp1m {
     border-color: #3f51b5 !important;
 }
+.MuiTabs-flexContainer {
+    .MuiTab-root {
+        color: rgba(0, 0, 0, 1);
+        font-size: 1rem;
+    }
+    .Mui-selected {
+        background-color: transparent !important;
+        color: #3f51b5 !important;
+        font-weight: bold;
+    }
+}
 
 .entry-popup {
     .toolbar-popup {
@@ -369,5 +390,88 @@ header {
     }
     .inner-form-control {
         width: 100% !important; 
+    }
+}
+
+
+.page-gcr-detail {
+    .content-block.upper {
+        position: relative;
+        .sub-detail {
+            margin-bottom: 1rem;
+            h6 {
+                padding-right: .5rem;
+            }
+            button {
+                padding: 0;
+                font-size: 0.9rem !important;
+            }
+        }
+        .sub-detail-holder {
+            background-color: #EEEEEE;
+            div.holder {
+                padding: 1rem;
+            }
+        }
+        .contexual-menu {
+            position: absolute;
+            right: .5rem;
+            top: .5rem;
+        }
+    }
+    .form {
+        flex-wrap: wrap;
+        gap: 1.5rem 5rem;
+        padding: 1rem;
+        fieldset {
+            legend {
+                font-weight: bold;
+            }
+            label {
+                padding-bottom: 0;
+            }
+        }
+    }
+    .inner-holder {
+        margin-top: 2rem;
+        .MuiAccordionSummary-content {
+            h3 {
+                padding-bottom: .2rem;
+            }
+            div {
+                padding-top: .5rem;
+            }
+            .sub-detail {
+                gap: .5rem;
+                &.unique {
+                    h6 {
+                        display: flex;
+                        gap: .5rem;
+                        margin-bottom: .8rem;
+                        align-items: center;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+        .data-grid-holder {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+.css-1elwnq4-MuiPaper-root-MuiAccordion-root {
+    box-shadow: none !important;
+    border: 1px solid #CCCCCC;
+}
+.css-o4b71y-MuiAccordionSummary-content {
+    gap: 1rem;
+}
+.css-yw020d-MuiAccordionSummary-expandIconWrapper {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    svg {
+        font-size: 3rem;
     }
 }

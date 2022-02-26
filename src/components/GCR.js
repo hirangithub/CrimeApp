@@ -227,7 +227,7 @@ const Home = () => {
                     </div>
                     <div className="content-block lower"> 
                         <Box display="flex" sx={{ justifyContent: 'space-between', alignItems: 'center' }}>                     
-                            <Typography variant="h2" sx={{ paddingBottom: '0' }}>බල අපරාධ ලේඛණය</Typography> 
+                            <Typography variant="h2" className="p-0">බල අපරාධ ලේඛණය</Typography> 
                             <Button color="secondary" variant="contained" onClick={handleClickOpen}>නව අපරාධ ඇතුලත් කිරීම</Button>
                         </Box>
 
@@ -254,7 +254,7 @@ const Home = () => {
                                         ).map((row) => (
                                             <StyledTableRow key={row.name} style={{ verticalAlign: 'top' }}>
                                                 <TableCell style={{ width: 80 }} component="th" scope="row" >
-                                                    <a href="#">{row.crimeNumber}</a>
+                                                    <a href="/GCRDetail">{row.crimeNumber}</a>
                                                 </TableCell>
                                                 <TableCell style={{ minWidth: 210 }} >
                                                     {row.crimeType}

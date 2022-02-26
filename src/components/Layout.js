@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container } from 'reactstrap';
 import { AppBar, Toolbar, Breadcrumbs, Link, Typography, Divider } from '@material-ui/core';
 import HomeIcon from '@mui/icons-material/Home';
-import { NavMenu } from './NavMenu';
+import NavMenu from './NavMenu';
 
 export class Layout extends Component {
   static displayName = Layout.name;
@@ -21,6 +21,7 @@ export class Layout extends Component {
                 Home
               </Link>
               <Typography variant="subtitle2">බල අපරාධ</Typography>
+              <Typography variant="subtitle2">බල අපරාධ detail view</Typography>
           </Breadcrumbs>
         </AppBar>  
 
