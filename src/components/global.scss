@@ -7,9 +7,19 @@ $breakpoint-xxl: "only screen and (min-width: 1600px)";
 
 a {
     color: #3f51b5;
+    font-size: 0.8rem;
     &:hover {
         color: #475bcc;
     }
+}
+
+p {
+    font-size: 0.8rem !important;
+    line-height: 1rem !important;
+}
+
+.p-0 {
+    padding-bottom: 0;
 }
 
 hr {
@@ -29,13 +39,14 @@ ul {
 }
 
 .MuiFormLabel-root {
-    color: #000000;
+    color: #000000 !important;
 }
 
 header {
     ul {
         list-style-type: none;
         display: flex;
+        align-items: center;
         padding: 0 1rem;
         margin: 0;
         li {
@@ -44,6 +55,7 @@ header {
                 text-decoration: none;
                 padding: 0 .5rem .5rem;
                 color: rgba(255,255,255, 0.7);
+                font-size: 0.8rem;
                 &:hover,
                 &.selected {
                     border-bottom: 2px solid white;
@@ -62,6 +74,9 @@ header {
         &:last-child {
             .location-dropdown {
                 width: 12rem;
+                .MuiOutlinedInput-root.MuiOutlinedInput-root.MuiOutlinedInput-root .MuiOutlinedInput-input {
+                    padding: 8px 10px;
+                }
             }
             .link-avatar {
                 display: inline-block;
@@ -85,6 +100,7 @@ header {
     }
     .breadcrumb {
         padding: .5rem 1rem;
+        font-size: 0.8rem;
     }
     .white-version {
         background-color: transparent;
@@ -115,14 +131,29 @@ header {
 
 
 .content-holder {
-    padding: 2rem;
+    //padding: 2rem;
     .content-block {
         background-color: #FFFFFF;
-        border-radius: 5px;
+        //border-radius: 5px;
         padding: 1rem;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
         &.upper {
-            margin-bottom: 2rem;
+            margin: .1rem 0 1rem;
+            .MuiFormLabel-root {
+                line-height: 11px !important;
+            }
+        }
+        &.lower {
+            margin: 1.5rem;
+            &.margin-t0 {
+                margin-top: 0;
+            }
+        }
+        &.tab-head {
+            margin: 1rem 1rem 0;
+            background-color: transparent;
+            box-shadow: none;
+            padding: 0;
         }
     }
 
@@ -203,12 +234,14 @@ header {
         margin-top: 1rem;
         box-shadow: none;
         border: 1px solid rgba(224, 224, 224, 1);
-        td {
-            padding: 12px;
+        td,
+        th {
+            padding: 10px;
         }
         .MuiTableHead-root {
             tr td {
                 font-weight: bold;
+                font-size: 0.8rem;
             }
         }
         .MuiTableBody-root {
@@ -270,7 +303,7 @@ header {
 .MuiTabs-flexContainer {
     .MuiTab-root {
         color: rgba(0, 0, 0, 1);
-        font-size: 1rem;
+        font-size: .9rem;
     }
     .Mui-selected {
         background-color: transparent !important;
@@ -422,7 +455,7 @@ header {
     .form {
         flex-wrap: wrap;
         gap: 1.5rem 5rem;
-        padding: 1rem;
+        padding: 1rem !important;
         fieldset {
             legend {
                 font-weight: bold;
@@ -437,12 +470,24 @@ header {
         .MuiAccordionSummary-content {
             h3 {
                 padding-bottom: .2rem;
+                padding-right: 4rem;
             }
             div {
                 padding-top: .5rem;
             }
             .sub-detail {
                 gap: .5rem;
+                align-items: flex-start;
+                div {
+                    padding-top: 0;
+                }
+                h6 {
+                    display: flex;
+                    align-items: center;
+                    svg {
+                        margin-right: .3rem;
+                    }
+                }
                 &.unique {
                     h6 {
                         display: flex;
@@ -451,6 +496,14 @@ header {
                         align-items: center;
                         text-align: center;
                     }
+                }
+            }
+            .sub-detail-right {
+                border-left: 1px solid #CCCCCC;
+                padding-left: 1rem;
+                margin-left: 1rem;
+                h6 {
+                    padding-bottom: .5rem;
                 }
             }
         }
@@ -474,4 +527,8 @@ header {
     svg {
         font-size: 3rem;
     }
+}
+
+.MuiBox-root {
+    padding: 0 !important;
 }

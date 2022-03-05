@@ -330,7 +330,7 @@ const Home = () => {
                                     >
                                     <CloseIcon />
                                     </IconButton>
-                                    <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
+                                    <Typography variant="h3" className="p-0">
                                         බල අපරාධයක් පිලිබද පලමු තොරතුරු ඇතුළත් කිරීම 
                                     </Typography>
                                     <Button autoFocus variant="outlined" onClick={handleClose}>Save changes</Button>

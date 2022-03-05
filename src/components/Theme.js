@@ -27,10 +27,10 @@ export const theme = createTheme({
       }
     },    
     typography: {
-      htmlFontSize: 16,
+      htmlFontSize: 14,
       fontFamily: "'TT Norms Pro', sans-serif",
-      fontSize: 16,
-      lineHeight: 18,
+      fontSize: 14,
+      lineHeight: 16,
       fontWeightLight: 300,
       fontWeightRegular: 400,
       fontWeightMedium: 500,
@@ -50,15 +50,15 @@ export const theme = createTheme({
       h2: {
         fontFamily: "'TT Norms Pro', sans-serif",
         fontWeight: 700,
-        fontSize: "1.6rem",
-        lineHeight: "1.6rem",
+        fontSize: "1.4rem",
+        lineHeight: "1.4rem",
         paddingBottom: "1rem",
       },
       h3: {
         fontFamily: "'TT Norms Pro', sans-serif",
         fontWeight: 700,
-        fontSize: "1.4rem",
-        lineHeight: "1.4rem",
+        fontSize: "1.2rem",
+        lineHeight: "1.2rem",
         paddingBottom: "1rem",  
       },
       h4: {
@@ -77,21 +77,21 @@ export const theme = createTheme({
       subtitle2: {
         fontFamily: "'TT Norms Pro', sans-serif",
         fontWeight: 400,
-        fontSize: "0.9rem",
-        lineHeight: "1.1rem",
+        fontSize: "0.8rem",
+        lineHeight: "1rem",
       },
       button: {
         fontFamily: "'TT Norms Pro', sans-serif",
-        fontSize: "1.1rem",
-        lineHeight: "1.1rem",
+        fontSize: "1rem",
+        lineHeight: "1rem",
       }
     },    
     overrides: {
       MuiButton: {
         root: {
           textTransform: 'none',
-          padding: '.8rem 1.5rem',
-          fontSize: ".9rem",
+          padding: '.6rem 1rem',
+          fontSize: ".8rem",
         },
         containedSecondary: {
           fontWeight: 700,
@@ -106,7 +106,7 @@ export const theme = createTheme({
         root: {
           backgroundColor: '#FFFFFF',
           padding: '0',
-          fontSize: 16,
+          fontSize: 14,
           "& $notchedOutline": {
             borderColor: "rgba(0, 0, 0, 0.23)"
           },
@@ -117,7 +117,7 @@ export const theme = createTheme({
             borderColor: "#3f51b5"
           },
           "&&& $input": {
-            padding: "12.2px 14px"
+            padding: "10px 12px"
           }
         }
       },
@@ -129,7 +129,7 @@ export const theme = createTheme({
       },
       MuiFormLabel: {
         root: {
-          fontSize: 15,
+          fontSize: 14,
           lineHeight: 1.3,
           paddingBottom: '.5rem',
           color: '#141414',
@@ -138,7 +138,7 @@ export const theme = createTheme({
       MuiSelect: {
         root: {
           borderRadius: 0,
-          fontSize: 16,
+          fontSize: 14,
         }
       },
       MuiAvatar: {

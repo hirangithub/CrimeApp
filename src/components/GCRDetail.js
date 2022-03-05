@@ -17,7 +17,14 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 import FmdGoodOutlinedIcon from '@mui/icons-material/FmdGoodOutlined';
 import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
+import ManIcon from '@mui/icons-material/Man';
+import MaleIcon from '@mui/icons-material/Male';
+import BadgeIcon from '@mui/icons-material/Badge';
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
+import AccessibilityIcon from '@mui/icons-material/Accessibility';
+import NumbersIcon from '@mui/icons-material/Numbers';
+import PublicIcon from '@mui/icons-material/Public';
+import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import Avatar from '@mui/material/Avatar';
 import ProfileImage from '../assets/p-1.jpg';
@@ -223,7 +230,7 @@ const GCRDetail = () => {
                     
                     <Box sx={{ width: '100%' }}>
 
-                      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                      <Box className="content-block tab-head" sx={{ borderBottom: 1, borderColor: 'divider' }}>
                         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                           <Tab label="වින්දිතයන් පිළිබද විස්තර" {...a11yProps(0)} />
                           <Tab label="සැකකරුවන් පිළිබද විස්තර" {...a11yProps(1)} />
@@ -234,14 +241,14 @@ const GCRDetail = () => {
                         </Tabs>
                       </Box>
 
-                      <div className="content-block lower"> 
+                      <div className="content-block lower margin-t0"> 
                         <TabPanel value={value} index={0}>
-                            වින්දිතයන් පිළිබද විස්තර content goes here
+                          <Typography variant="subtitle2">වින්දිතයන් පිළිබද විස්තර content goes here</Typography>
                         </TabPanel>
                         <TabPanel value={value} index={1}>
                             
                             <Box display="flex" sx={{ justifyContent: 'space-between', alignItems: 'end' }}>                     
-                                <Typography variant="h2" className="p-0">සැකකරුවන් පිළිබද විස්තර (4)</Typography> 
+                                <Typography variant="h3" className="p-0">සැකකරුවන් පිළිබද විස්තර (4)</Typography> 
                                 <Button color="secondary" variant="contained">නව සැකකරුවන් ඇතුලත් කිරීම</Button>
                             </Box>
 
@@ -256,24 +263,28 @@ const GCRDetail = () => {
                                     <div>
                                         <Typography variant="h3">දසනායක මුදියන්සලාගේ සමන්ත කුමාර දසනායක</Typography>
                                         <Typography variant="subtitle1">(සුදු පුතා/ කහවණු)</Typography>
+                                       
                                         <Box display="flex" sx={{ alignItems: 'center' }} className="sub-detail">                     
-                                          <Typography variant="subtitle2">Male</Typography> 
-                                          <Typography variant="subtitle2"><FiberManualRecordIcon sx={{ width: '.5rem', height: '.5rem', opacity: '.7' }} /></Typography> 
-                                          <Typography variant="subtitle2">45yrs (12-12-1976)</Typography>
-                                          <Typography variant="subtitle2"><FiberManualRecordIcon sx={{ width: '.5rem', height: '.5rem', opacity: '.7' }} /></Typography> 
-                                          <Typography variant="subtitle2">7690014369V</Typography>
-                                          <Typography variant="subtitle2"><FiberManualRecordIcon sx={{ width: '.5rem', height: '.5rem', opacity: '.7' }} /></Typography> 
-                                          <Typography variant="subtitle2">පෙදරේරු</Typography>
+                                          <div>
+                                              <Box display="flex" sx={{ alignItems: 'center' }} className="sub-detail">    
+                                                <Typography variant="subtitle2"><NumbersIcon />CRM-0001</Typography> 
+                                                <Typography variant="subtitle2"><MaleIcon /> Male</Typography> 
+                                                <Typography variant="subtitle2"><AccessibilityIcon /> 45yrs (12-12-1976)</Typography>
+                                                <Typography variant="subtitle2"><BadgeIcon /> 7690014369V</Typography>
+                                                <Typography variant="subtitle2"><PublicIcon /> N00079886754</Typography>
+                                              </Box>
+
+                                              <Box display="flex" sx={{ alignItems: 'center', marginTop: '.5rem' }} className="sub-detail">                     
+                                                <Typography variant="subtitle2"><WorkOutlineIcon /> පෙදරේරු</Typography> 
+                                              </Box> 
+                                          </div>  
+                                          <div className="sub-detail-right">
+                                            <Typography variant="subtitle2"><FmdGoodOutlinedIcon /> 287/21, සමගි පුර මහල් නිවාස, නව නගරය, යාපනය</Typography> 
+                                            <Typography variant="subtitle2"><CallOutlinedIcon /> 0773725702, 0112790069</Typography>
+                                          </div>
                                         </Box>
-                                        <Box display="flex" sx={{ alignItems: 'center', opacity: '.5' }} className="sub-detail">                     
-                                          <Typography variant="subtitle2">CRM-0001</Typography> 
-                                          <Typography variant="subtitle2">N00079886754</Typography>
-                                        </Box> 
+                                        
                                     </div>
-                                    <Box display="block" sx={{ alignItems: 'center', paddingLeft: '4rem' }} className="sub-detail unique">                     
-                                      <Typography variant="subtitle1"><FmdGoodOutlinedIcon /> 287/21, සමගි පුර මහල් නිවාස, නව නගරය, යාපනය</Typography> 
-                                      <Typography variant="subtitle2"><CallOutlinedIcon /> 0773725702, 0112790069</Typography>
-                                    </Box>
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <hr />
@@ -348,24 +359,29 @@ const GCRDetail = () => {
                                     <div>
                                         <Typography variant="h3">දසනායක මුදියන්සලාගේ සමන්ත කුමාර දසනායක</Typography>
                                         <Typography variant="subtitle1">(සුදු පුතා/ කහවණු)</Typography>
+                                       
                                         <Box display="flex" sx={{ alignItems: 'center' }} className="sub-detail">                     
-                                          <Typography variant="subtitle2">Male</Typography> 
-                                          <Typography variant="subtitle2"><FiberManualRecordIcon sx={{ width: '.5rem', height: '.5rem', opacity: '.7' }} /></Typography> 
-                                          <Typography variant="subtitle2">45yrs (12-12-1976)</Typography>
-                                          <Typography variant="subtitle2"><FiberManualRecordIcon sx={{ width: '.5rem', height: '.5rem', opacity: '.7' }} /></Typography> 
-                                          <Typography variant="subtitle2">7690014369V</Typography>
-                                          <Typography variant="subtitle2"><FiberManualRecordIcon sx={{ width: '.5rem', height: '.5rem', opacity: '.7' }} /></Typography> 
-                                          <Typography variant="subtitle2">පෙදරේරු</Typography>
+                                          <div>
+                                              <Box display="flex" sx={{ alignItems: 'center' }} className="sub-detail">    
+                                                <Typography variant="subtitle2"><NumbersIcon />CRM-0001</Typography> 
+                                                <Typography variant="subtitle2"><MaleIcon /> Male</Typography> 
+                                                <Typography variant="subtitle2"><AccessibilityIcon /> 45yrs (12-12-1976)</Typography>
+                                                <Typography variant="subtitle2"><BadgeIcon /> 7690014369V</Typography>
+                                                <Typography variant="subtitle2"><PublicIcon /> N00079886754</Typography>
+                                              </Box>
+
+                                              <Box display="flex" sx={{ alignItems: 'center', marginTop: '.5rem' }} className="sub-detail">                     
+                                                <Typography variant="subtitle2"><WorkOutlineIcon /> පෙදරේරු</Typography> 
+                                              </Box> 
+                                          </div>  
+                                          <div className="sub-detail-right">
+                                            <Typography variant="subtitle2"><FmdGoodOutlinedIcon /> 287/21, සමගි පුර මහල් නිවාස, නව නගරය, යාපනය</Typography> 
+                                            <Typography variant="subtitle2"><CallOutlinedIcon /> 0773725702, 0112790069</Typography>
+                                          </div>
                                         </Box>
-                                        <Box display="flex" sx={{ alignItems: 'center', opacity: '.5' }} className="sub-detail">                     
-                                          <Typography variant="subtitle2">CRM-0001</Typography> 
-                                          <Typography variant="subtitle2">N00079886754</Typography>
-                                        </Box> 
+                                        
                                     </div>
-                                    <Box display="block" sx={{ alignItems: 'center', paddingLeft: '4rem' }} className="sub-detail unique">                     
-                                      <Typography variant="subtitle1"><FmdGoodOutlinedIcon /> 287/21, සමගි පුර මහල් නිවාස, නව නගරය, යාපනය</Typography> 
-                                      <Typography variant="subtitle2"><CallOutlinedIcon /> 0773725702, 0112790069</Typography>
-                                    </Box>
+
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <hr />
