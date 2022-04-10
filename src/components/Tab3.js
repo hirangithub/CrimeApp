@@ -16,6 +16,7 @@ import TableRow from '@mui/material/TableRow';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
+import StatementRows from './StatementRows';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',
@@ -62,8 +63,7 @@ function Row(props) {
           <IconButton
             aria-label="expand row"
             size="small"
-            onClick={() => setOpen1(!open1)}
-          >
+            onClick={() => setOpen1(!open1)}>
             {open1 ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
@@ -81,7 +81,7 @@ function Row(props) {
         <TableCell className="inner-table" style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={8}>
           <Collapse in={open1} timeout="auto" unmountOnExit>
             <Box>
-              <h3>Sub title goes here</h3>
+              {/* <h3>Sub title goes here</h3> */}
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
@@ -145,6 +145,13 @@ const Tab3Content = () => {
         setOpen(false);
     };
   
+    const [openStatement, setOpenStatement] = React.useState(false);
+    const handleClickOpenStatement = () => {
+        setOpenStatement(true);
+    };
+    const handleStatementClose = () => {
+        setOpenStatement(false);
+    };
     return (             
         <div>
             <Box display="flex" sx={{ justifyContent: 'space-between', alignItems: 'center' }}>                     
@@ -165,8 +172,8 @@ const Tab3Content = () => {
               </Box>
 
               <div className="menu-options">
-                <Link onClick={handleClickOpen}>ප්‍රකාශ සටහන් කිරීම</Link>
-                <Link href="#">සොකෝ නිලධරයන් කැඳවීම</Link>
+                <Link onClick={handleClickOpenStatement}>ප්‍රකාශ සටහන් කිරීම</Link>
+                <Link onClick={handleClickOpen}>සොකෝ නිලධරයන් කැඳවීම</Link>
                 <Link href="#">නිල සුනඛයන් කැඳවීම</Link>
                 <Link href="#">විමර්ශන කළ නිලධරයන් සහ අධීක්‍ෂණ නිලධරයන් අපරාධ ස්ථාන පරීක්‍ෂා කිරීම පිළිබඳ විස්තරය</Link>
                 <Link href="#">මුල් තොරතුරට අදාලව ජ්‍යෙෂ්ඨ රාජ්‍ය නිවේදිත නිලධරයන් විසින් ලබාදෙන විමර්ශන නියෝග</Link>
@@ -184,8 +191,7 @@ const Tab3Content = () => {
                 open={open}
                 onClose={handleClose}
                 TransitionComponent={Transition}
-                className="entry-popup"
-            >
+                className="entry-popup">
                 <AppBar sx={{ position: 'relative' }} className="toolbar-popup" position="sticky">
                     <Toolbar>
                         <IconButton
@@ -204,7 +210,6 @@ const Tab3Content = () => {
                 </AppBar>
                                      
                 <div className="popup-container">
-                  
                   <TableContainer component={Paper}>
                     <Table aria-label="collapsible table">
                       <TableHead>
@@ -226,10 +231,63 @@ const Tab3Content = () => {
                       </TableBody>
                     </Table>
                   </TableContainer>
+                </div>
+            </Dialog>            
+
+            {/* Popup content starts here */}                            
+            <Dialog
+                fullScreen
+                open={openStatement}
+                onClose={handleStatementClose}
+                TransitionComponent={Transition}
+                className="entry-popup">
+                <AppBar sx={{ position: 'relative' }} className="toolbar-popup" position="sticky">
+                    <Toolbar>
+                        <IconButton
+                        edge="start"
+                        color="inherit"
+                        onClick={handleStatementClose}
+                        aria-label="close">
+                        <CloseIcon />
+                        </IconButton>
+                        <Typography variant="h3" className="p-0">
+                          ප්‍රකාශ සටහන් කිරීම පිළිබද විස්තරය									
+                        </Typography>
+                        <Button autoFocus variant="outlined" onClick={handleStatementClose}>Save changes</Button>
+                    </Toolbar>
+                </AppBar>
+                                     
+                <div className="popup-container">
+                  
+                  <TableContainer component={Paper}>
+                    <Table aria-label="collapsible table">
+                      <TableHead>
+                        <TableRow> 
+                          {/* <TableCell rowSpan='2'/> */}
+                          <TableCell rowSpan='2'>අනු අංකය</TableCell>
+                          <TableCell rowSpan='2'>දිනය</TableCell>
+                          <TableCell rowSpan='2'>ප්‍රකාශය සටහන් කළ තැනැත්තාගේ නම</TableCell>                          
+                          <TableCell rowSpan='2'>ලිපිනය</TableCell>
+                          <TableCell rowSpan='2'>දුරකථන අංකය</TableCell>
+                          <TableCell rowSpan='2'>ජාතික හැඳුනුම්පත් අංකය</TableCell>
+                          <TableCell rowSpan='2'>විදේශ ගමන් බලපත්‍ර අංකය</TableCell>
+                          <TableCell align="center" colSpan='4'>ප්‍රකාශය සටහන් කළ නිලධාරියා පිළිබඳ විස්තරය</TableCell>
+                        </TableRow>
+                        <TableRow>                         
+                          <TableCell>නිලය</TableCell>
+                          <TableCell>නිල අංකය</TableCell>
+                          <TableCell>නම</TableCell>
+                          <TableCell>දුරකථන අංක</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        <StatementRows></StatementRows>
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
 
                 </div>
             </Dialog>
-            
         </div> 
 
     )
