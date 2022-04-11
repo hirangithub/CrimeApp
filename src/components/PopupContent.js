@@ -184,7 +184,7 @@ const PopupContent = () => {
 
             {/* Section 3 */}       
             <Item>
-                <Typography variant="h3">පැමිණිලිකරු පිළිබද විස්තර</Typography> 
+                {/* <Typography variant="h3">පැමිණිලිකරු පිළිබද විස්තර</Typography> 
                 <FormControl variant="outlined" component="fieldset" className="inner-form-control">
                     <FormLabel component="legend">නීතියේ වගන්ති</FormLabel>
                     <TagsInput
@@ -194,7 +194,7 @@ const PopupContent = () => {
                         name="tags"
                         placeholder="Select or add tags"
                     />
-                </FormControl>
+                </FormControl> */}
 
                 <Typography variant="h4">දේපල සම්බන්ද තොරතුරු</Typography> 
                 <div className="bg-on">
@@ -230,10 +230,10 @@ const PopupContent = () => {
                     <div>
                         <ul>
                             <li className="w w-50">
-                                sd asd a da da sd
+                                පරිගණක
                             </li>
                             <li className="w w-25">
-                                43535345345345
+                                400,000.00
                             </li>
                             <li className="w w-25">
                                 <Link href="#" variant="body2"><DeleteIcon /></Link>                                                    
@@ -241,10 +241,10 @@ const PopupContent = () => {
                         </ul>
                         <ul>
                             <li className="w w-50">
-                                sd asd a da da sd
+                                රත්‍රන් මාල
                             </li>
                             <li className="w w-25">
-                                43535345345345
+                                525,000.00
                             </li>
                             <li className="w w-25">
                                 <Link href="#" variant="body2"><DeleteIcon /></Link>                                                    
@@ -303,10 +303,10 @@ const PopupContent = () => {
                     <div>
                         <ul>
                             <li className="w w-50">
-                                sd asd a da da sd
+                                රත්‍රන් මාල
                             </li>
                             <li className="w w-25">
-                                43535345345345
+                                125,000.00
                             </li>
                             <li className="w w-25">
                                 <Link href="#" variant="body2"><DeleteIcon /></Link>                                                    
@@ -314,10 +314,10 @@ const PopupContent = () => {
                         </ul>
                         <ul>
                             <li className="w w-50">
-                                sd asd a da da sd
+                                ජංගම දුරකථන
                             </li>
                             <li className="w w-25">
-                                43535345345345
+                                50,000.00
                             </li>
                             <li className="w w-25">
                                 <Link href="#" variant="body2"><DeleteIcon /></Link>                                                    
@@ -331,7 +331,7 @@ const PopupContent = () => {
                                 මුළු වටිනාකම
                             </li>
                             <li className="w w-25">
-                                1,250,000.00
+                                175,000.00
                             </li>
                             <li className="w w-25">
                                 &nbsp;
@@ -345,7 +345,7 @@ const PopupContent = () => {
 
             {/* Section 4 */}       
             <Item>
-                <Typography variant="h3">ස්ථිර කිරීම</Typography> 
+                <Typography variant="h3">පැමිණිලිකරු පිළිබද විස්තර</Typography> 
 
                 <FormControl variant="outlined" component="fieldset" className="inner-form-control">
                     <ul>
