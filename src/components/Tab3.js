@@ -15,8 +15,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 
 import StatementRows from './StatementRows';
+import SocoRows from './SocoRows';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',
@@ -152,33 +154,42 @@ const Tab3Content = () => {
     const handleStatementClose = () => {
         setOpenStatement(false);
     };
+
+    const [openSoco, setOpenSoco] = React.useState(false);
+    const handleClickOpenSoco = () => {
+      setOpenSoco(true);
+    };
+    const handleSocoClose = () => {
+      setOpenSoco(false);
+    };
+
     return (             
         <div>
-            <Box display="flex" sx={{ justifyContent: 'space-between', alignItems: 'center' }}>                     
+            {/* <Box display="flex" sx={{ justifyContent: 'space-between', alignItems: 'center' }}>                     
                 <Typography variant="h3" className="p-0">විමර්ෂණ පිළිබද විස්තර</Typography> 
                 <Button color="secondary" variant="contained">නව විමර්ෂණ ඇතුලත් කිරීම</Button>
-            </Box>
+            </Box> */}
 
             <div className="inner-holder">
               <Box display="flex" className="form pm-0">
                 <FormControl variant="outlined" component="fieldset" className="inner-form-control">
                     <FormLabel component="legend">විමර්ශනය ආරම්භ කල දිනය:</FormLabel>
-                    <FormLabel>342342342</FormLabel>
+                    <FormLabel>01-02-2020</FormLabel>
                 </FormControl>
                 <FormControl variant="outlined" component="fieldset" className="inner-form-control">
                     <FormLabel component="legend">විමර්ශනය ආරම්භ කළ දින සිට එය අවසන් කිරීම දක්වා ගත වූ කාලය:</FormLabel>
-                    <FormLabel>342342342</FormLabel>
+                    <FormLabel>--</FormLabel>
                 </FormControl>
               </Box>
 
               <div className="menu-options">
                 <Link onClick={handleClickOpenStatement}>ප්‍රකාශ සටහන් කිරීම</Link>
-                <Link onClick={handleClickOpen}>සොකෝ නිලධරයන් කැඳවීම</Link>
+                <Link onClick={handleClickOpenSoco}>සොකෝ නිලධරයන් කැඳවීම</Link>
                 <Link href="#">නිල සුනඛයන් කැඳවීම</Link>
                 <Link href="#">විමර්ශන කළ නිලධරයන් සහ අධීක්‍ෂණ නිලධරයන් අපරාධ ස්ථාන පරීක්‍ෂා කිරීම පිළිබඳ විස්තරය</Link>
                 <Link href="#">මුල් තොරතුරට අදාලව ජ්‍යෙෂ්ඨ රාජ්‍ය නිවේදිත නිලධරයන් විසින් ලබාදෙන විමර්ශන නියෝග</Link>
                 <Link href="#">අපරාධ ස්ථානයට ඇ.ස.රෙ. නිලධරයන් කැඳවීම</Link>
-                <Link href="#">හඳුනා ගැනීමේ පෙරෙට්ටු පැවැත්වීම පිළිබද විස්තරය</Link>
+                <Link onClick={handleClickOpen}>හඳුනා ගැනීමේ පෙරෙට්ටු පැවැත්වීම පිළිබද විස්තරය</Link>
                 <Link href="#">අත්අඩංගුවට ගන්නා ලද නඩු භාණ්ඩ පිළිබඳ විස්තර</Link>
                 <Link href="#">සැකකරුවන්ගේ ඇඟිලි සලකුණු ඇ.ස.රෙ. වෙත සහ ක්‍රමවිධි ආකෘතිපත්‍ර අපරාධ ලේඛනාගාරය වෙත යොමු කිරීම සම්බන්ධව</Link>
                 <Link href="#">සැකකරුවන් රඳවා තබා ගැනීමේ නියෝග ලබා ගත්තේ නම් ඒ පිළිබඳ විස්තර</Link>
@@ -205,7 +216,8 @@ const Tab3Content = () => {
                         <Typography variant="h3" className="p-0">
                             හඳුනා ගැනීමේ පෙරෙට්ටු පැවැත්වීම පිළිබද විස්තරය									
                         </Typography>
-                        <Button autoFocus variant="outlined" onClick={handleClose}>Save changes</Button>
+                        {/* <Button autoFocus variant="outlined" onClick={handleClose}>Save changes</Button> */}
+                        <Button color="secondary" variant="outlined"><AddCircleOutlineOutlinedIcon sx={{ marginRight: '.3rem' }} /> නව ඇතුලත් කිරීම</Button>
                     </Toolbar>
                 </AppBar>
                                      
@@ -253,7 +265,8 @@ const Tab3Content = () => {
                         <Typography variant="h3" className="p-0">
                           ප්‍රකාශ සටහන් කිරීම පිළිබද විස්තරය									
                         </Typography>
-                        <Button autoFocus variant="outlined" onClick={handleStatementClose}>Save changes</Button>
+                        {/* <Button autoFocus variant="outlined" onClick={handleStatementClose}>Save changes</Button> */}
+                        <Button color="secondary" variant="outlined"><AddCircleOutlineOutlinedIcon sx={{ marginRight: '.3rem' }} /> නව ඇතුලත් කිරීම</Button>
                     </Toolbar>
                 </AppBar>
                                      
@@ -282,6 +295,54 @@ const Tab3Content = () => {
                       </TableHead>
                       <TableBody>
                         <StatementRows></StatementRows>
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+
+                </div>
+            </Dialog>
+
+            {/* Popup content starts here */}                            
+            <Dialog
+                fullScreen
+                open={openSoco}
+                onClose={handleSocoClose}
+                TransitionComponent={Transition}
+                className="entry-popup">
+                <AppBar sx={{ position: 'relative' }} className="toolbar-popup" position="sticky">
+                    <Toolbar>
+                        <IconButton
+                        edge="start"
+                        color="inherit"
+                        onClick={handleSocoClose}
+                        aria-label="close">
+                        <CloseIcon />
+                        </IconButton>
+                        <Typography variant="h3" className="p-0">
+                          සොකෝ නිලධරයන් කැඳවීම
+                        </Typography>
+                        {/* <Button autoFocus variant="outlined" onClick={handleSocoClose}>Save changes</Button> */}
+                        <Button color="secondary" variant="outlined"><AddCircleOutlineOutlinedIcon sx={{ marginRight: '.3rem' }} /> නව ඇතුලත් කිරීම</Button>
+                    </Toolbar>
+                </AppBar>
+                                     
+                <div className="popup-container">
+                  
+                  <TableContainer component={Paper}>
+                    <Table aria-label="collapsible table">
+                      <TableHead>
+                        <TableRow> 
+                          <TableCell/>
+                          <TableCell rowSpan='2'>අනු අංකය</TableCell>
+                          <TableCell rowSpan='2'>කැඳවන ලද දිනය</TableCell>
+                          <TableCell rowSpan='2'>සොකෝ නිලධරයාගේ නම</TableCell>                          
+                          <TableCell rowSpan='2'>නිලය / නිල අංකය</TableCell>
+                          <TableCell rowSpan='2'>දුරකථන අංකය</TableCell>
+                          <TableCell rowSpan='2'>තොරතුරු පොතේ නම, පිටුව හා ඡේදය</TableCell>                          
+                        </TableRow>                        
+                      </TableHead>
+                      <TableBody>
+                        <SocoRows></SocoRows>
                       </TableBody>
                     </Table>
                   </TableContainer>

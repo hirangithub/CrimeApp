@@ -10,6 +10,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import Tab1Content from './Tab1';
 import Tab2Content from './Tab2';
 import Tab3Content from './Tab3';
 import './global.scss'; 
@@ -105,11 +106,11 @@ const GCRDetail = () => {
                 <Grid item xs={12} className="content-holder">
                     <div className="content-block upper"> 
                         <Box display="grid">
-                            <Typography variant="h3" sx={{ paddingBottom: '0' }}>34/2021: මනුෂ ඝාතනයට තැත් කිරීම / සිය පණ හාණිකර ගැනීමට අනුබල දීම</Typography> 
+                            <Typography variant="h3" sx={{ paddingBottom: '0' }}>34/2021: අංක 123/4 ජේතවන පාර, කොල්ලුපිටිය නිවසේ සිදුවූ මනුස්ස ඝාතනය</Typography> 
                             <Box display="flex" sx={{ alignItems: 'center' }} className="sub-detail">                     
                               <Typography variant="subtitle2">GC00001</Typography> 
                               <Typography variant="subtitle2"><FiberManualRecordIcon sx={{ width: '.5rem', height: '.5rem', opacity: '.7' }} /></Typography> 
-                              <Typography variant="subtitle2">content goes here</Typography> 
+                              <Typography variant="subtitle2">මනුෂ ඝාතනය</Typography> 
                               <Typography variant="subtitle2"><FiberManualRecordIcon sx={{ width: '.5rem', height: '.5rem', opacity: '.7' }} /></Typography> 
                               
                               <ExpandMore
@@ -119,35 +120,76 @@ const GCRDetail = () => {
                                   aria-label="advanced search"
                                   className="adv-search-link"
                                   >
-                                  <Link>More details</Link>
+                                  <Link>තවත් තොරතුරු</Link>
                               </ExpandMore>
                             </Box>
                         </Box>
 
                         <Collapse className="sub-detail-holder" in={expanded} timeout="auto" unmountOnExit>
-                          <Box display="flex" className="form">
-                            
+                          <Box display="flex" className="form">                            
                             <FormControl variant="outlined" component="fieldset" className="inner-form-control">
-                                <FormLabel component="legend">සිද්ධ්ය වූ දිනය / දින පරාසය:</FormLabel>
-                                <FormLabel>342342342</FormLabel>
+                                <FormLabel component="legend">සිද්ධිය වූ දිනය හා වෙලාව:</FormLabel>
+                                <FormLabel>01-02-2021 1640</FormLabel>
                             </FormControl>
                             <FormControl variant="outlined" component="fieldset" className="inner-form-control">
-                                <FormLabel component="legend">සිද්ධ්ය වූ දිනය / දින පරාසය:</FormLabel>
-                                <FormLabel>342342342</FormLabel>
+                                <FormLabel component="legend">සිද්ධිය වූ ලිපිනය:</FormLabel>
+                                <FormLabel>222/3 ආසිරි උයන, කදිරාන</FormLabel>
                             </FormControl>
                             <FormControl variant="outlined" component="fieldset" className="inner-form-control">
-                                <FormLabel component="legend">සිද්ධ්ය වූ දිනය:</FormLabel>
-                                <FormLabel>342342342</FormLabel>
+                                <FormLabel component="legend">ග්‍රා.නි.ව.:</FormLabel>
+                                <FormLabel>කදිරාන උතුර</FormLabel>
                             </FormControl>
                             <FormControl variant="outlined" component="fieldset" className="inner-form-control">
-                                <FormLabel component="legend">සිද්ධ්ය වූ දිනය:</FormLabel>
-                                <FormLabel>342342342</FormLabel>
+                                <FormLabel component="legend">දේපලවල වටිනාකම:</FormLabel>
+                                <FormLabel>රු 450,000</FormLabel>
                             </FormControl>
                             <FormControl variant="outlined" component="fieldset" className="inner-form-control">
-                                <FormLabel component="legend">සිද්ධ්ය වූ දිනය / දින පරාසය:</FormLabel>
-                                <FormLabel>342342342</FormLabel>
+                                <FormLabel component="legend">සොයාගත් දේපලවල වටිනාකම:</FormLabel>
+                                <FormLabel>රු 150,000</FormLabel>
                             </FormControl>
-
+                            <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                <FormLabel component="legend">තොරතුරු පොත:</FormLabel>
+                                <FormLabel>GCIB 200/23</FormLabel>
+                            </FormControl>
+                          </Box>
+                          <hr/>
+                          <Box display="flex" className="form">                            
+                            <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                <FormLabel component="legend">පැමිණිලිකරුගේ නම:</FormLabel>
+                                <FormLabel>සමන් කුමාර</FormLabel>
+                            </FormControl>
+                            <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                <FormLabel component="legend">ලිපිනය:</FormLabel>
+                                <FormLabel>123/4 ජේතවන පාර, කොල්ලුපිටිය </FormLabel>
+                            </FormControl>
+                            <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                <FormLabel component="legend">වයස:</FormLabel>
+                                <FormLabel>අවුරුදු 45</FormLabel>
+                            </FormControl>
+                            <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                <FormLabel component="legend">ස්ත්‍රී/පුරුෂ භාවය:</FormLabel>
+                                <FormLabel>පුරුෂ</FormLabel>
+                            </FormControl>
+                            <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                <FormLabel component="legend">රැකියාව:</FormLabel>
+                                <FormLabel>රියදුරු </FormLabel>
+                            </FormControl>
+                            <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                <FormLabel component="legend">දුරකථන අංකය:</FormLabel>
+                                <FormLabel>0777777777,0771111111</FormLabel>
+                            </FormControl>
+                            <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                <FormLabel component="legend">ජාතික හැඳුනුම්පත් අංකය:</FormLabel>
+                                <FormLabel>222222222V</FormLabel>
+                            </FormControl>
+                            <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                <FormLabel component="legend">විදේශ ගමන් බලපත්‍ර අංකය:</FormLabel>
+                                <FormLabel>N00000001</FormLabel>
+                            </FormControl>
+                            <FormControl variant="outlined" component="fieldset" className="inner-form-control">
+                                <FormLabel component="legend">වින්දිතයාට ඇති සම්බන්ධතාවය:</FormLabel>
+                                <FormLabel>පියා</FormLabel>
+                            </FormControl>
                           </Box>
                         </Collapse>
 
@@ -194,13 +236,14 @@ const GCRDetail = () => {
                           <Tab label="විමර්ෂණ පිළිබද විස්තර" {...a11yProps(2)} />
                           <Tab label="නඩු පිළිබද විස්තර" {...a11yProps(3)} />
                           <Tab label="නියෝග හා කාර්ය පැවරීම" {...a11yProps(4)} />
-                          <Tab label="ක්‍රියාකාරීත්ව කාලරාමු සටහන" {...a11yProps(5)} />
+                          {/* <Tab label="ක්‍රියාකාරීත්ව කාලරාමු සටහන" {...a11yProps(5)} /> */}
                         </Tabs>
                       </Box>
 
                       <div className="content-block lower margin-t0"> 
                         <TabPanel value={value} index={0}>
-                          <Typography variant="subtitle2">වින්දිතයන් පිළිබද විස්තර content goes here</Typography>
+                          {/* <Typography variant="subtitle2">වින්දිතයන් පිළිබද විස්තර content goes here</Typography> */}
+                          <Tab1Content />
                         </TabPanel>
                         <TabPanel value={value} index={1}>
 
