@@ -21,7 +21,7 @@ export class Layout extends Component {
                 Home
               </Link>
               <Typography variant="subtitle2">බල අපරාධ</Typography>
-              <Typography variant="subtitle2">බල අපරාධ detail view</Typography>
+              <Typography variant="subtitle2">බල අපරාධ detail view 123</Typography>
           </Breadcrumbs>
         </AppBar>  
 
