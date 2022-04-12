@@ -431,6 +431,16 @@ header {
                 background-color: #FFFFFF;
                 margin-bottom: 2rem;
             }
+            .inner-table-column {
+                .MuiPaper-root {
+                    box-shadow: none;
+                    flex: 1 0;
+                    &:first-child {
+                        margin-right: 2rem;
+                    }
+                }
+                
+            }
         }
     }
 }

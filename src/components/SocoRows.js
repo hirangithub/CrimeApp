@@ -96,67 +96,63 @@ function SocoRow(props) {
           <TableRow>
             <TableCell className="inner-table" style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={8}>
               <Collapse in={open1} timeout="auto" unmountOnExit>
-                <Box>
-                  <h5>සහාය වූ නිලධරයන් පිළිබඳ විස්තරය</h5>
-                  <Table size="small" aria-label="purchases">
-                    <TableHead>
-                      {/* <TableRow>
-                        <TableCell colSpan={4}>සහාය වූ නිලධරයන් පිළිබඳ විස්තරය</TableCell>                        
-                      </TableRow> */}
-                      <TableRow>
-                        <TableCell>නිලය</TableCell>
-                        <TableCell>නිල අංකය</TableCell>
-                        <TableCell>නම</TableCell>
-                        <TableCell>දුරකථන අංකය</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {row.officers.map((officerRow) => (
-                        <TableRow key={officerRow.officerNumber}>
-                          <TableCell component="th" scope="row">
-                            {officerRow.officerRank}
-                          </TableCell>
-                          <TableCell>{officerRow.officerNumber}</TableCell>
-                          <TableCell>{officerRow.officerName}</TableCell>
-                          <TableCell>{officerRow.officerTelephone}</TableCell>
+                <Box sx={{ display: 'flex' }} className="inner-table-column">
+                      <Item>
+                      <h4>සහාය වූ නිලධරයන් පිළිබඳ විස්තරය</h4>
+                      <Table size="small" aria-label="purchases">
+                        <TableHead>
+                          {/* <TableRow>
+                            <TableCell colSpan={4}>සහාය වූ නිලධරයන් පිළිබඳ විස්තරය</TableCell>                        
+                          </TableRow> */}
+                          <TableRow>
+                            <TableCell>නිලය</TableCell>
+                            <TableCell>නිල අංකය</TableCell>
+                            <TableCell>නම</TableCell>
+                            <TableCell>දුරකථන අංකය</TableCell>
+                          </TableRow>
+                        </TableHead>
+                        <TableBody>
+                          {row.officers.map((officerRow) => (
+                            <TableRow key={officerRow.officerNumber}>
+                              <TableCell component="th" scope="row">
+                                {officerRow.officerRank}
+                              </TableCell>
+                              <TableCell>{officerRow.officerNumber}</TableCell>
+                              <TableCell>{officerRow.officerName}</TableCell>
+                              <TableCell>{officerRow.officerTelephone}</TableCell>
+                            </TableRow>
+                          ))}
+                        </TableBody>
+                      </Table>
+                  </Item>
+                  <Item>
+                    <h4>සොයා ගන්නා ලද නඩු භාණ්ඩ පිළිබඳ විස්තරය</h4>
+                    <Table size="small" aria-label="purchases">
+                      <TableHead>
+                        {/* <TableRow>
+                          <TableCell colSpan={4}>සහාය වූ නිලධරයන් පිළිබඳ විස්තරය</TableCell>                        
+                        </TableRow> */}
+                        <TableRow>
+                          <TableCell>භාණ්ඩය</TableCell>
+                          <TableCell>වටිනාකම </TableCell>
                         </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
+                      </TableHead>
+                      <TableBody>
+                        {row.discoveredItems.map((itemRow) => (
+                          <TableRow key={itemRow.itemName}>
+                            <TableCell component="th" scope="row">
+                              {itemRow.itemName}
+                            </TableCell>
+                            <TableCell>{itemRow.value}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </Item>
                 </Box>
               </Collapse>
             </TableCell>
           </TableRow>    
-          <TableRow>
-            <TableCell className="inner-table" style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={8}>
-              <Collapse in={open1} timeout="auto" unmountOnExit>
-                <Box>
-                  <h5>සොයා ගන්නා ලද නඩු භාණ්ඩ පිළිබඳ විස්තරය</h5>
-                  <Table size="small" aria-label="purchases">
-                    <TableHead>
-                      {/* <TableRow>
-                        <TableCell colSpan={4}>සහාය වූ නිලධරයන් පිළිබඳ විස්තරය</TableCell>                        
-                      </TableRow> */}
-                      <TableRow>
-                        <TableCell>භාණ්ඩය</TableCell>
-                        <TableCell>වටිනාකම </TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {row.discoveredItems.map((itemRow) => (
-                        <TableRow key={itemRow.itemName}>
-                          <TableCell component="th" scope="row">
-                            {itemRow.itemName}
-                          </TableCell>
-                          <TableCell>{itemRow.value}</TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </Box>
-              </Collapse>
-            </TableCell>
-          </TableRow>     
         </React.Fragment>
   );
 }

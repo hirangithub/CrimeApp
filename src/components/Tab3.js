@@ -285,6 +285,7 @@ const Tab3Content = () => {
                           <TableCell rowSpan='2'>ජාතික හැඳුනුම්පත් අංකය</TableCell>
                           <TableCell rowSpan='2'>විදේශ ගමන් බලපත්‍ර අංකය</TableCell>
                           <TableCell align="center" colSpan='4'>ප්‍රකාශය සටහන් කළ නිලධාරියා පිළිබඳ විස්තරය</TableCell>
+                          <TableCell rowSpan='2'>Last column</TableCell>
                         </TableRow>
                         <TableRow>                         
                           <TableCell>නිලය</TableCell>
