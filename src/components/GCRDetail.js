@@ -126,7 +126,7 @@ const GCRDetail = () => {
                         </Box>
 
                         <Collapse className="sub-detail-holder" in={expanded} timeout="auto" unmountOnExit>
-                          <Box display="flex" className="form">                            
+                          <Box display="flex" className="form custom">                            
                             <FormControl variant="outlined" component="fieldset" className="inner-form-control">
                                 <FormLabel component="legend">සිද්ධිය වූ දිනය හා වෙලාව:</FormLabel>
                                 <FormLabel>01-02-2021 1640</FormLabel>
@@ -152,8 +152,8 @@ const GCRDetail = () => {
                                 <FormLabel>GCIB 200/23</FormLabel>
                             </FormControl>
                           </Box>
-                          <hr/>
-                          <Box display="flex" className="form">                            
+                          <hr className="custom" />
+                          <Box display="flex" className="form custom">                            
                             <FormControl variant="outlined" component="fieldset" className="inner-form-control">
                                 <FormLabel component="legend">පැමිණිලිකරුගේ නම:</FormLabel>
                                 <FormLabel>සමන් කුමාර</FormLabel>

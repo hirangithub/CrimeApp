@@ -27,6 +27,9 @@ hr {
     box-shadow: none;
     opacity: .5;
     margin-bottom: 2rem;
+    &.custom {
+        margin-bottom: .5rem;
+    }
 }
 
 ul {
@@ -435,6 +438,7 @@ header {
                 .MuiPaper-root {
                     box-shadow: none;
                     flex: 1 0;
+                    background-color: #EEEEEE;
                     &:first-child {
                         margin-right: 2rem;
                     }
@@ -499,6 +503,11 @@ header {
         }
         &.pm-0 {
             padding: 0 !important;
+        }
+        &.custom {
+            .inner-form-control {
+                width: 11rem;
+            }
         }
     }
     .inner-holder {
